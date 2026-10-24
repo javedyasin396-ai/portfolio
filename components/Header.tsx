@@ -7,7 +7,6 @@ import { whatsappUrl } from '@/config/site'
 const nav = [
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
-  { href: '#services', label: 'Services' },
   { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
@@ -32,8 +31,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-bg/85 backdrop-blur">
       <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-6">
-        <a href="#top" className="font-serif text-2xl font-bold tracking-tight text-accent-2">
-          Javed<em className="italic text-accent">Yasin</em>
+        <a href="#top" className="text-xl font-bold tracking-tight text-fg">
+          Javed <span className="text-accent">Yasin</span>
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">

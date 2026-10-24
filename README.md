@@ -62,13 +62,12 @@ Set `whatsappNumber` in `config/site.ts` as international digits only (for examp
 
 ## Contact form
 
-The form needs a service to send email. It is set up for [Formspree](https://formspree.io) (free plan available).
+The form posts to [FormSubmit](https://formsubmit.co), which emails each message to `javedyasin396@gmail.com`. No account is needed, but the address must be activated once:
 
-1. Create a form at formspree.io with `javedyasin396@gmail.com` as the recipient and copy its endpoint (`https://formspree.io/f/xxxxxxxx`).
-2. Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_FORM_ENDPOINT` to that endpoint.
-3. Restart the dev server.
+1. Send one message from the form (or any first message).
+2. Open the "Activate Form" email that FormSubmit sends to that inbox (check Spam) and click the link.
 
-The endpoint is not a secret key. Formspree provides spam filtering, and the form also includes a hidden honeypot field. The success message is shown only after Formspree replies with a success status. Without an endpoint, the button opens the visitor's email app (`mailto:`) instead.
+After that, messages arrive in your inbox. Until activation, the form shows an honest "could not be sent" error. To use a different service (for example Formspree), set `NEXT_PUBLIC_FORM_ENDPOINT` in `.env.local`. The success message appears only after the service confirms success. A hidden honeypot field is included against bots.
 
 ## Domain and SEO
 

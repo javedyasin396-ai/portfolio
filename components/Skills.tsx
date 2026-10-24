@@ -14,9 +14,8 @@ export default function Skills() {
             <h3 className="font-serif text-xl font-bold text-accent-2">{g.title}</h3>
             <ul className="mt-5 space-y-3">
               {g.skills.map((s) => (
-                <li key={s.name} className="flex items-baseline justify-between gap-4 border-b border-border/60 pb-3 last:border-b-0">
+                <li key={s.name} className="border-b border-border/60 pb-3 last:border-b-0">
                   <span>{s.name}</span>
-                  <span className="text-xs text-muted">{s.level === 'Core' ? 'Main' : 'Also use'}</span>
                 </li>
               ))}
             </ul>

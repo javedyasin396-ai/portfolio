@@ -52,9 +52,16 @@ export default function ContactForm() {
       const res = await fetch(site.formEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(values),
+        body: JSON.stringify({
+          ...values,
+          _subject: `Portfolio message: ${values.subject}`,
+          _replyto: values.email,
+          _template: 'table',
+          _captcha: 'false',
+        }),
       })
-      if (!res.ok) throw new Error(`Request failed with status ${res.status}`)
+      const data = (await res.json().catch(() => ({}))) as { success?: boolean | string }
+      if (!res.ok || String(data.success) === 'false') throw new Error(`Request failed with status ${res.status}`)
       setStatus('success')
       setValues({ name: '', email: '', subject: '', message: '' })
     } catch {

@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="border-t border-border/70 py-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="font-serif text-xl font-bold text-accent-2">{site.name}</p>
+          <p className="text-lg font-bold">{site.name}</p>
           <p className="mt-1 text-sm text-muted">{site.role}</p>
         </div>
         <p className="text-xs text-muted">© {new Date().getFullYear()} {site.name}</p>

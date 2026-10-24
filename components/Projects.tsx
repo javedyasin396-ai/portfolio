@@ -55,7 +55,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
               ) : (
                 <div
                   aria-hidden
-                  className="flex h-full items-center justify-center bg-gradient-to-br from-surface to-bg font-serif text-3xl font-bold italic text-accent/70"
+                  className="flex h-full items-center justify-center bg-gradient-to-br from-surface to-bg text-2xl font-bold text-accent/70"
                 >
                   {p.title}
                 </div>

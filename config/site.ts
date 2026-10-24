@@ -23,8 +23,12 @@ export const site = {
   whatsappNumber: '',
   whatsappMessage: 'Hi Javed, I found your portfolio and would like to talk.',
 
-  /** Formspree endpoint. Empty falls back to opening the visitor's email app. */
-  formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? '',
+  /**
+   * Where the contact form posts. Defaults to FormSubmit, which emails the messages to `email`
+   * (the address must be activated once from the first message). Set NEXT_PUBLIC_FORM_ENDPOINT to use
+   * another service such as Formspree.
+   */
+  formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT || 'https://formsubmit.co/ajax/javedyasin396@gmail.com',
 
   seo: {
     title: 'Javed Yasin | Full Stack Developer (Python, Django, React)',

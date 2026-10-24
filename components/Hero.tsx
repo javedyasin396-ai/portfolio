@@ -8,10 +8,8 @@ export default function Hero() {
       <div className="mx-auto max-w-6xl px-6 pb-24 pt-20 sm:pt-28">
         <p className="label fade-up">{site.role} · {site.location}</p>
 
-        <h1 className="fade-up delay-1 mt-8 font-serif text-[clamp(3.4rem,12vw,8rem)] font-black leading-[0.95] tracking-[-0.03em]">
-          Javed
-          <br />
-          <em className="font-serif font-normal italic text-accent">Yasin</em>
+        <h1 className="fade-up delay-1 mt-6 text-[clamp(2.75rem,8vw,5.5rem)] font-bold leading-[1.05] tracking-tight">
+          Javed <span className="text-accent">Yasin</span>
         </h1>
 
         <p className="fade-up delay-2 mt-10 max-w-xl text-lg leading-relaxed text-label sm:text-xl">{site.intro}</p>

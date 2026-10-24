@@ -18,7 +18,7 @@ export default function OpengraphImage() {
           padding: '80px',
           background: '#07080a',
           color: '#e8e6e0',
-          fontFamily: 'Georgia, serif',
+          fontFamily: 'sans-serif',
         }}
       >
         <div style={{ fontSize: 26, letterSpacing: 6, color: '#c8a96e', textTransform: 'uppercase' }}>
@@ -26,7 +26,7 @@ export default function OpengraphImage() {
         </div>
         <div style={{ fontSize: 140, fontWeight: 700, lineHeight: 1.02, marginTop: 28, display: 'flex' }}>
           {site.name.split(' ')[0]}&nbsp;
-          <span style={{ color: '#c8a96e', fontStyle: 'italic' }}>{site.name.split(' ')[1]}</span>
+          <span style={{ color: '#c8a96e' }}>{site.name.split(' ')[1]}</span>
         </div>
         <div style={{ fontSize: 34, color: '#9ca3af', marginTop: 28 }}>
           Websites and web applications with React and Django
