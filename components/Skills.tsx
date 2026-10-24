@@ -1,45 +1,28 @@
-import Section, { Gold } from './Section'
-import { skillGroups, type SkillLevel } from '@/config/skills'
-
-const dots: Record<SkillLevel, number> = { Core: 3, 'Working Knowledge': 2, 'Currently Exploring': 1 }
+import Section from './Section'
+import { skillGroups } from '@/config/skills'
 
 export default function Skills() {
-  const skills = skillGroups.flatMap((g) =>
-    g.skills.filter((s) => s.enabled).map((s) => ({ ...s, group: g.title })),
-  )
+  const groups = skillGroups
+    .map((g) => ({ ...g, skills: g.skills.filter((s) => s.enabled) }))
+    .filter((g) => g.skills.length > 0)
 
   return (
-    <Section
-      id="skills"
-      label="Technical expertise"
-      heading={
-        <>
-          Tech stack &amp; <Gold>skills</Gold>
-        </>
-      }
-      subtitle="Core technologies, frameworks and tools I use to build web applications."
-    >
-      <ul className="grid gap-px overflow-hidden rounded-[3px] border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
-        {skills.map((s) => (
-          <li key={s.name} className="flex flex-col justify-between bg-card p-5 transition-colors hover:bg-surface">
-            <h3 className="font-sans text-base font-semibold leading-snug">{s.name}</h3>
-            <div className="mt-6 flex items-center justify-between gap-3 text-xs">
-              <span className="text-muted">{s.group}</span>
-              <span className="flex items-center gap-2 font-medium text-accent">
-                {s.level}
-                <span aria-hidden className="flex gap-1">
-                  {[1, 2, 3].map((n) => (
-                    <span
-                      key={n}
-                      className={`h-1.5 w-3 rounded-full ${n <= dots[s.level] ? 'bg-accent' : 'bg-border'}`}
-                    />
-                  ))}
-                </span>
-              </span>
-            </div>
-          </li>
+    <Section id="skills" label="Skills" heading="What I work with" subtitle="The tools I use most often.">
+      <div className="grid gap-px overflow-hidden rounded-[3px] border border-border bg-border md:grid-cols-3">
+        {groups.map((g) => (
+          <div key={g.title} className="bg-card p-6 sm:p-8">
+            <h3 className="font-serif text-xl font-bold text-accent-2">{g.title}</h3>
+            <ul className="mt-5 space-y-3">
+              {g.skills.map((s) => (
+                <li key={s.name} className="flex items-baseline justify-between gap-4 border-b border-border/60 pb-3 last:border-b-0">
+                  <span>{s.name}</span>
+                  <span className="text-xs text-muted">{s.level === 'Core' ? 'Main' : 'Also use'}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </Section>
   )
 }

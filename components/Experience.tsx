@@ -1,4 +1,4 @@
-import Section, { Gold } from './Section'
+import Section from './Section'
 import { experience, education, type TimelineItem } from '@/config/profile'
 
 function Timeline({ title, items }: { title: string; items: TimelineItem[] }) {
@@ -28,15 +28,7 @@ function Timeline({ title, items }: { title: string; items: TimelineItem[] }) {
 
 export default function Experience() {
   return (
-    <Section
-      id="experience"
-      label="Background"
-      heading={
-        <>
-          Experience &amp; <Gold>education</Gold>
-        </>
-      }
-    >
+    <Section id="experience" label="Background" heading="Experience and education">
       <div className="grid gap-14 lg:grid-cols-2">
         <Timeline title="Experience" items={experience} />
         <Timeline title="Education" items={education} />

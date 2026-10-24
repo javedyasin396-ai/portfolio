@@ -20,7 +20,7 @@ export const projects: Project[] = [
   {
     title: 'Nexora',
     description:
-      'A responsive landing page for a customer support SaaS product, built as a React and Vite single-page app.',
+      'A landing page for a customer support SaaS product, built with React and Vite. It has features, pricing and FAQ sections and works on phones.',
     category: 'Frontend',
     stack: ['React', 'Vite', 'CSS'],
     live: 'https://nexora-ai-support.netlify.app/',
@@ -31,7 +31,7 @@ export const projects: Project[] = [
   {
     title: 'Django Lead Management System',
     description:
-      'A Django web application for managing leads, with email notifications, the Django admin and CSV export.',
+      'A Django app for collecting and managing leads. It sends email notifications, uses the Django admin and can export leads to CSV.',
     category: 'Python / Backend',
     stack: ['Python', 'Django'],
     repo: 'https://github.com/javedyasin396-ai/Django-lead-management-system',

@@ -44,7 +44,7 @@ export default function Header() {
           ))}
           <a href={ctaHref} {...ctaProps} className="btn btn-primary !min-h-10 !px-5 !text-[0.75rem]">
             {wa ? <MessageCircle size={15} aria-hidden /> : null}
-            {wa ? 'WhatsApp' : 'Hire me'}
+            {wa ? 'WhatsApp' : 'Contact'}
           </a>
         </nav>
 
@@ -72,7 +72,7 @@ export default function Header() {
             ))}
             <li className="pt-2">
               <a href={ctaHref} onClick={() => setOpen(false)} {...ctaProps} className="btn btn-primary w-full">
-                {wa ? 'WhatsApp' : 'Hire me'}
+                {wa ? 'WhatsApp' : 'Contact'}
               </a>
             </li>
           </ul>

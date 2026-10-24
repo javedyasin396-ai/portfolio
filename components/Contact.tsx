@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Mail, MapPin, MessageCircle, Briefcase } from 'lucide-react'
 import { GitHubIcon, LinkedInIcon, XIcon } from './Icons'
-import Section, { Gold } from './Section'
+import Section from './Section'
 import ContactForm from './ContactForm'
 import { site, whatsappUrl } from '@/config/site'
 
@@ -27,13 +27,9 @@ export default function Contact() {
   return (
     <Section
       id="contact"
-      label="Get in touch"
-      heading={
-        <>
-          Let’s build something <Gold>extraordinary</Gold>
-        </>
-      }
-      subtitle="Have a project in mind or looking to hire a web developer? Send a message and I will get back to you."
+      label="Contact"
+      heading="Get in touch"
+      subtitle="Have a project or a role in mind? Send me a message and I’ll reply by email."
     >
       <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr]">
         <div>

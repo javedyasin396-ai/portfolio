@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import Image from 'next/image'
 import { ExternalLink, Code2 } from 'lucide-react'
-import Section, { Gold } from './Section'
+import Section from './Section'
 import { categories, type Project } from '@/config/projects'
 
 export default function Projects({ projects }: { projects: Project[] }) {
@@ -18,13 +18,9 @@ export default function Projects({ projects }: { projects: Project[] }) {
   return (
     <Section
       id="projects"
-      label="Selected work"
-      heading={
-        <>
-          Web &amp; software <Gold>projects</Gold>
-        </>
-      }
-      subtitle="A showcase of web applications built with HTML, CSS, JavaScript, React and Django."
+      label="Projects"
+      heading="Things I’ve built"
+      subtitle="A few projects with the code on GitHub."
     >
       <div role="group" aria-label="Filter projects by category" className="mb-10 flex flex-wrap gap-2">
         {filters.map((f) => (

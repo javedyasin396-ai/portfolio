@@ -22,14 +22,14 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ fontSize: 26, letterSpacing: 6, color: '#c8a96e', textTransform: 'uppercase' }}>
-          {site.eyebrow}
+          {site.role}
         </div>
         <div style={{ fontSize: 140, fontWeight: 700, lineHeight: 1.02, marginTop: 28, display: 'flex' }}>
           {site.name.split(' ')[0]}&nbsp;
           <span style={{ color: '#c8a96e', fontStyle: 'italic' }}>{site.name.split(' ')[1]}</span>
         </div>
         <div style={{ fontSize: 34, color: '#9ca3af', marginTop: 28 }}>
-          Python · Django · React · Web applications
+          Websites and web applications with React and Django
         </div>
       </div>
     ),

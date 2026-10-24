@@ -5,10 +5,8 @@
 export const site = {
   name: 'Javed Yasin',
   role: 'Full Stack Developer',
-  eyebrow: 'Full Stack Developer • Web Engineer',
   location: 'Pakistan',
-  status: 'Available for freelance and full-time work',
-  tagline:'Building useful software with clean code and modern technology.',
+  status: 'Open to freelance and full-time work',
   /** Production domain, for example https://javedyasin.dev. Set via NEXT_PUBLIC_SITE_URL. */
   domain: process.env.NEXT_PUBLIC_SITE_URL ?? '',
 
@@ -31,26 +29,24 @@ export const site = {
   seo: {
     title: 'Javed Yasin | Full Stack Developer (Python, Django, React)',
     description:
-      'Portfolio of Javed Yasin, a Full Stack Developer from Pakistan. Explore web development projects built with Python, Django and React.',
+      'Javed Yasin is a full stack developer from Pakistan. He builds websites and web applications with React and Django. See his projects and get in touch.',
   },
 
+  intro:
+    'I’m a full stack developer from Pakistan. I build websites and web applications with React and Django, from the pages you see to the database behind them.',
+
   about: {
-    heading: 'Engineering web solutions with care.',
     paragraphs: [
-      'I am a Full Stack Developer with 3+ years of experience building websites and web applications. I work across the front end and the back end, mainly with React and Django, and I hold a Master’s degree in Computer Science from the University of Okara.',
-      'I care about clean, maintainable code, responsive interfaces and a smooth user experience. I enjoy turning real requirements into working software, and I am open to freelance projects and full-time opportunities in web development.',
+      'I’ve spent the last three years building web applications: first as a full stack developer at Itians Company, where I worked on Django back ends, REST APIs and React front ends, and alongside that on my own projects.',
+      'I have a master’s degree in computer science from the University of Okara. These days I enjoy turning a rough idea into a site or app that is simple to use and easy to maintain.',
+      'I’m open to freelance projects and full-time roles. If you have something in mind, I’d be happy to hear about it.',
     ],
-    stats: [
-      { value: '3+', label: 'Years experience' },
-      { value: '3', label: 'Featured projects' },
-      { value: 'MSCS', label: 'Degree' },
-      { value: 'C1', label: 'English level' },
-    ],
-    cards: [
-      { title: 'Web Development', text: 'Responsive websites and interfaces with HTML, CSS, JavaScript and React.' },
-      { title: 'Backend Development', text: 'Python and Django applications with databases, admin tools and REST APIs.' },
-      { title: 'Education', text: 'MSCS, University of Okara.' },
-      { title: 'Languages', text: 'Urdu and Punjabi (native), English (C1). Learning basic German.' },
+    facts: [
+      { label: 'Based in', value: 'Pakistan' },
+      { label: 'Main stack', value: 'React, Django, Python, JavaScript' },
+      { label: 'Education', value: 'MSCS, University of Okara' },
+      { label: 'Languages', value: 'Urdu, Punjabi, English (C1), basic German' },
+      { label: 'Availability', value: 'Freelance and full-time' },
     ],
   },
 }
