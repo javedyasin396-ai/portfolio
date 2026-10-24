@@ -8,6 +8,8 @@ export type Project = {
   /** Optional links. A missing link hides its button. */
   live?: string
   repo?: string
+  /** Path inside /public, for example '/projects/nexora.jpg'. Missing image shows a typographic cover. */
+  image?: string
   year?: number
   featured?: boolean
   /** Placeholder entries are never shown on the published site. */
@@ -23,6 +25,7 @@ export const projects: Project[] = [
     stack: ['React', 'Vite', 'CSS'],
     live: 'https://nexora-ai-support.netlify.app/',
     repo: 'https://github.com/javedyasin396-ai/nexora-ai-saas-landing',
+    image: '/projects/nexora.jpg',
     featured: true,
   },
   {
@@ -32,6 +35,7 @@ export const projects: Project[] = [
     category: 'Python / Backend',
     stack: ['Python', 'Django'],
     repo: 'https://github.com/javedyasin396-ai/Django-lead-management-system',
+    image: '/projects/django-leads.png',
     featured: true,
   },
   {

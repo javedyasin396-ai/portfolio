@@ -1,11 +1,19 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { DM_Sans, Playfair_Display, JetBrains_Mono } from 'next/font/google'
 import { site } from '@/config/site'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display: 'swap' })
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  weight: ['400', '700', '900'],
+  variable: '--font-playfair',
+  display: 'swap',
+})
+const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono-face', display: 'swap' })
 
-export const viewport: Viewport = { themeColor: '#070b14', colorScheme: 'dark' }
+export const viewport: Viewport = { themeColor: '#07080a', colorScheme: 'dark' }
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain || 'http://localhost:3000'),
@@ -37,7 +45,7 @@ const personJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${dmSans.variable} ${playfair.variable} ${mono.variable}`}>
       <body>
         <script
           type="application/ld+json"

@@ -6,3 +6,5 @@ out
 !.env.example
 *.tsbuildinfo
 next-env.d.ts
+dev.log
+AGENTS.md

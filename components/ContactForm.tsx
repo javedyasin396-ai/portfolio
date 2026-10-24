@@ -20,7 +20,8 @@ function validate(v: Fields): Errors {
 }
 
 const field =
-  'mt-1.5 w-full rounded-xl border border-border bg-surface px-4 py-3 text-base text-fg placeholder:text-muted/60 focus:border-accent'
+  'mt-2 w-full rounded-[3px] border border-border bg-bg px-4 py-3 text-base text-fg placeholder:text-muted/60 focus:border-accent'
+const labelClass = 'font-mono text-[0.68rem] uppercase tracking-[0.2em] text-label'
 
 export default function ContactForm() {
   const [values, setValues] = useState<Fields>({ name: '', email: '', subject: '', message: '' })
@@ -63,7 +64,7 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div role="status" className="rounded-2xl border border-success/40 bg-surface p-6">
+      <div role="status" className="rounded-[3px] border border-success/40 bg-card p-6">
         <h3 className="font-semibold text-success">Message sent</h3>
         <p className="mt-2 text-sm text-muted">Thank you. I will reply to your email address soon.</p>
         <button type="button" onClick={() => setStatus('idle')} className="mt-4 text-sm font-semibold text-accent hover:underline">
@@ -79,26 +80,26 @@ export default function ContactForm() {
     <form onSubmit={onSubmit} noValidate className="space-y-5" aria-label="Contact form">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="text-sm font-medium">Name</label>
+          <label htmlFor="name" className={labelClass}>Your name *</label>
           <input id="name" name="name" autoComplete="name" value={values.name} onChange={set('name')}
             aria-invalid={Boolean(errors.name)} aria-describedby={describe('name')} className={field} />
           {errors.name && <p id="name-error" className="mt-1 text-sm text-danger">{errors.name}</p>}
         </div>
         <div>
-          <label htmlFor="email" className="text-sm font-medium">Email</label>
+          <label htmlFor="email" className={labelClass}>Your email *</label>
           <input id="email" name="email" type="email" autoComplete="email" value={values.email} onChange={set('email')}
             aria-invalid={Boolean(errors.email)} aria-describedby={describe('email')} className={field} />
           {errors.email && <p id="email-error" className="mt-1 text-sm text-danger">{errors.email}</p>}
         </div>
       </div>
       <div>
-        <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+        <label htmlFor="subject" className={labelClass}>Subject *</label>
         <input id="subject" name="subject" value={values.subject} onChange={set('subject')}
           aria-invalid={Boolean(errors.subject)} aria-describedby={describe('subject')} className={field} />
         {errors.subject && <p id="subject-error" className="mt-1 text-sm text-danger">{errors.subject}</p>}
       </div>
       <div>
-        <label htmlFor="message" className="text-sm font-medium">Message</label>
+        <label htmlFor="message" className={labelClass}>Message *</label>
         <textarea id="message" name="message" rows={5} value={values.message} onChange={set('message')}
           aria-invalid={Boolean(errors.message)} aria-describedby={describe('message')} className={field} />
         {errors.message && <p id="message-error" className="mt-1 text-sm text-danger">{errors.message}</p>}
@@ -109,7 +110,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="inline-flex min-h-11 items-center justify-center rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-bg hover:bg-accent-strong disabled:cursor-not-allowed disabled:opacity-60"
+        className="btn btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === 'sending' ? 'Sending…' : configured ? 'Send message' : 'Open in email app'}
       </button>

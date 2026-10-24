@@ -3,22 +3,30 @@ import type { ReactNode } from 'react'
 type Props = {
   id: string
   label: string
-  heading: string
+  /** Heading as nodes so a phrase can be set in gold italics. */
+  heading: ReactNode
   subtitle?: string
   children: ReactNode
 }
 
 export default function Section({ id, label, heading, subtitle, children }: Props) {
   return (
-    <section id={id} aria-labelledby={`${id}-heading`} className="border-t border-border/60 py-20">
-      <div className="mx-auto max-w-5xl px-5">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">{label}</p>
-        <h2 id={`${id}-heading`} className="text-3xl font-bold tracking-tight sm:text-4xl">
+    <section id={id} aria-labelledby={`${id}-heading`} className="border-t border-border/70 py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <p className="label">{label}</p>
+        <h2
+          id={`${id}-heading`}
+          className="mt-6 max-w-3xl font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl"
+        >
           {heading}
         </h2>
-        {subtitle && <p className="mt-3 max-w-2xl text-muted">{subtitle}</p>}
-        <div className="mt-10">{children}</div>
+        {subtitle && <p className="mt-5 max-w-xl text-lg leading-relaxed text-label">{subtitle}</p>}
+        <div className="mt-14">{children}</div>
       </div>
     </section>
   )
+}
+
+export function Gold({ children }: { children: ReactNode }) {
+  return <em className="font-serif italic text-accent">{children}</em>
 }

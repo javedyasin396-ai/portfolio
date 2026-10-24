@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Menu, X, MessageCircle } from 'lucide-react'
-import { site, whatsappUrl } from '@/config/site'
+import { whatsappUrl } from '@/config/site'
 
 const nav = [
   { href: '#about', label: 'About' },
@@ -10,6 +10,8 @@ const nav = [
   { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ]
+
+const navLink = 'text-[0.8rem] uppercase tracking-[0.16em] text-label transition-colors hover:text-accent-2'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -22,41 +24,31 @@ export default function Header() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
+  const ctaHref = wa ?? '#contact'
+  const ctaProps = wa ? { target: '_blank', rel: 'noopener noreferrer' } : {}
+
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-bg/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5">
-        <a href="#top" className="text-lg font-bold tracking-tight">
-          {site.name}
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-bg/85 backdrop-blur">
+      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-6">
+        <a href="#top" className="font-serif text-2xl font-bold tracking-tight text-accent-2">
+          Javed<em className="italic text-accent">Yasin</em>
         </a>
 
-        <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
           {nav.map((n) => (
-            <a key={n.href} href={n.href} className="text-sm text-muted transition-colors hover:text-fg">
+            <a key={n.href} href={n.href} className={navLink}>
               {n.label}
             </a>
           ))}
-          {wa ? (
-            <a
-              href={wa}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-accent px-4 text-sm font-semibold text-bg hover:bg-accent-strong"
-            >
-              <MessageCircle size={16} aria-hidden /> WhatsApp
-            </a>
-          ) : (
-            <a
-              href="#contact"
-              className="inline-flex min-h-10 items-center rounded-xl bg-accent px-4 text-sm font-semibold text-bg hover:bg-accent-strong"
-            >
-              Hire me
-            </a>
-          )}
+          <a href={ctaHref} {...ctaProps} className="btn btn-primary !min-h-10 !px-5 !text-[0.75rem]">
+            {wa ? <MessageCircle size={15} aria-hidden /> : null}
+            {wa ? 'WhatsApp' : 'Hire me'}
+          </a>
         </nav>
 
         <button
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded-lg border border-border md:hidden"
+          className="inline-flex size-11 items-center justify-center rounded border border-border md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -68,25 +60,16 @@ export default function Header() {
 
       {open && (
         <nav id="mobile-nav" aria-label="Mobile" className="border-t border-border/60 bg-bg md:hidden">
-          <ul className="mx-auto flex max-w-5xl flex-col px-5 py-3">
+          <ul className="mx-auto flex max-w-6xl flex-col px-6 py-3">
             {nav.map((n) => (
               <li key={n.href}>
-                <a
-                  href={n.href}
-                  onClick={() => setOpen(false)}
-                  className="block min-h-11 py-3 text-base text-muted hover:text-fg"
-                >
+                <a href={n.href} onClick={() => setOpen(false)} className={`block min-h-11 py-3 ${navLink}`}>
                   {n.label}
                 </a>
               </li>
             ))}
-            <li>
-              <a
-                href={wa ?? '#contact'}
-                onClick={() => setOpen(false)}
-                {...(wa ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="mt-2 block rounded-xl bg-accent px-4 py-3 text-center font-semibold text-bg"
-              >
+            <li className="pt-2">
+              <a href={ctaHref} onClick={() => setOpen(false)} {...ctaProps} className="btn btn-primary w-full">
                 {wa ? 'WhatsApp' : 'Hire me'}
               </a>
             </li>

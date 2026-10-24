@@ -7,7 +7,8 @@ export const site = {
   role: 'Full Stack Developer',
   eyebrow: 'Full Stack Developer • Web Engineer',
   location: 'Pakistan',
-  tagline: 'Building useful software with clean code and modern technology.',
+  status: 'Available for freelance and full-time work',
+  tagline:'Building useful software with clean code and modern technology.',
   /** Production domain, for example https://javedyasin.dev. Set via NEXT_PUBLIC_SITE_URL. */
   domain: process.env.NEXT_PUBLIC_SITE_URL ?? '',
 
@@ -38,6 +39,12 @@ export const site = {
     paragraphs: [
       'I am a Full Stack Developer with 3+ years of experience building websites and web applications. I work across the front end and the back end, mainly with React and Django, and I hold a Master’s degree in Computer Science from the University of Okara.',
       'I care about clean, maintainable code, responsive interfaces and a smooth user experience. I enjoy turning real requirements into working software, and I am open to freelance projects and full-time opportunities in web development.',
+    ],
+    stats: [
+      { value: '3+', label: 'Years experience' },
+      { value: '3', label: 'Projects shown' },
+      { value: '6', label: 'Core technologies' },
+      { value: 'MSCS', label: 'Degree' },
     ],
     cards: [
       { title: 'Web Development', text: 'Responsive websites and interfaces with HTML, CSS, JavaScript and React.' },
