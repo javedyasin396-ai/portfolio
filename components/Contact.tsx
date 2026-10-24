@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Mail, MapPin, MessageCircle, Briefcase } from 'lucide-react'
+import { GitHubIcon, LinkedInIcon, XIcon } from './Icons'
 import Section, { Gold } from './Section'
 import ContactForm from './ContactForm'
 import { site, whatsappUrl } from '@/config/site'
@@ -60,22 +61,22 @@ export default function Contact() {
           <ul className="mt-10 flex gap-3" aria-label="Social profiles">
             <li>
               <a href={site.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className={social}>
-                GH
+                <GitHubIcon className="size-[18px]" />
               </a>
             </li>
             <li>
               <a href={site.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={social}>
-                in
+                <LinkedInIcon className="size-[18px]" />
               </a>
             </li>
             <li>
               <a href={site.upwork} target="_blank" rel="noopener noreferrer" aria-label="Upwork" className={social}>
-                Up
+                <span className="font-semibold" aria-hidden>Up</span>
               </a>
             </li>
             <li>
               <a href={site.x} target="_blank" rel="noopener noreferrer" aria-label="X" className={social}>
-                X
+                <XIcon className="size-4" />
               </a>
             </li>
           </ul>

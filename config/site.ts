@@ -42,15 +42,15 @@ export const site = {
     ],
     stats: [
       { value: '3+', label: 'Years experience' },
-      { value: '3', label: 'Projects shown' },
-      { value: '6', label: 'Core technologies' },
+      { value: '3', label: 'Featured projects' },
       { value: 'MSCS', label: 'Degree' },
+      { value: 'C1', label: 'English level' },
     ],
     cards: [
       { title: 'Web Development', text: 'Responsive websites and interfaces with HTML, CSS, JavaScript and React.' },
       { title: 'Backend Development', text: 'Python and Django applications with databases, admin tools and REST APIs.' },
       { title: 'Education', text: 'MSCS, University of Okara.' },
-      { title: 'Languages', text: 'Urdu, Punjabi and English. Learning basic German.' },
+      { title: 'Languages', text: 'Urdu and Punjabi (native), English (C1). Learning basic German.' },
     ],
   },
 }

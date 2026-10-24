@@ -35,7 +35,9 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       { name: 'Git', level: 'Working Knowledge', enabled: true },
       { name: 'GitHub', level: 'Working Knowledge', enabled: true },
-      { name: 'Docker', level: 'Currently Exploring', enabled: false },
+      { name: 'GitLab', level: 'Working Knowledge', enabled: true },
+      { name: 'Docker', level: 'Working Knowledge', enabled: true },
+      { name: 'Linux / Bash', level: 'Working Knowledge', enabled: true },
       { name: 'PostgreSQL', level: 'Currently Exploring', enabled: false },
       { name: 'Redis', level: 'Currently Exploring', enabled: false },
     ],

@@ -35,7 +35,8 @@ app/            layout, page, robots, sitemap, global styles
 components/     Header, Hero, About, Skills, Projects, Contact, ContactForm, Footer, Button, Section
 config/site.ts      personal details, links, SEO, CV, WhatsApp, form endpoint
 config/skills.ts    skills and their levels
-config/projects.ts  project data
+config/projects.ts  project data (screenshots go in public/projects)
+config/profile.ts   experience, education, services and work process
 public/         favicon and static files (CV goes here)
 ```
 

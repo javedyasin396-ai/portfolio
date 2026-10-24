@@ -7,7 +7,9 @@ import { whatsappUrl } from '@/config/site'
 const nav = [
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
+  { href: '#services', label: 'Services' },
   { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -34,7 +36,7 @@ export default function Header() {
           Javed<em className="italic text-accent">Yasin</em>
         </a>
 
-        <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
           {nav.map((n) => (
             <a key={n.href} href={n.href} className={navLink}>
               {n.label}
@@ -48,7 +50,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded border border-border md:hidden"
+          className="inline-flex size-11 items-center justify-center rounded border border-border lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -59,7 +61,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-border/60 bg-bg md:hidden">
+        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-border/60 bg-bg lg:hidden">
           <ul className="mx-auto flex max-w-6xl flex-col px-6 py-3">
             {nav.map((n) => (
               <li key={n.href}>
