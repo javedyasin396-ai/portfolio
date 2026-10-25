@@ -18,6 +18,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'TaskFlow',
+    description:
+      'A task manager with a Django REST Framework API and a React front end. Users sign up, add tasks with a priority and due date, search and filter them, and see a summary.',
+    category: 'Full Stack',
+    stack: ['Django', 'REST Framework', 'React', 'Vite', 'SQLite'],
+    year: 2026,
+    featured: true,
+  },
+  {
+    title: 'ClientDesk',
+    description:
+      'A Django app for freelancers to manage clients and invoices. It supports line items, a dashboard of paid and overdue amounts, status filters and CSV export.',
+    category: 'Full Stack',
+    stack: ['Python', 'Django', 'Bootstrap', 'SQLite'],
+    year: 2026,
+    featured: true,
+  },
+  {
     title: 'Nexora',
     description:
       'A landing page for a customer support SaaS product, built with React and Vite. It has features, pricing and FAQ sections and works on phones.',
